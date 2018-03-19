@@ -17,7 +17,9 @@ LABEL maintainer="daniel.amsel@ime.fraunhofer.de" \
 
 WORKDIR /opt/
 
-RUN apt update && apt upgrade --yes && apt install --yes python \
+RUN apt update && \
+    apt install --yes
+        python \
 	python-pip \
 	zlib1g-dev \
 	pkg-config \
@@ -25,7 +27,8 @@ RUN apt update && apt upgrade --yes && apt install --yes python \
 	libfreetype6-dev \
 	libbz2-dev \
 	liblzma-dev \
-	libcurl4-gnutls-dev
+	libcurl4-gnutls-dev && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN pip install cython \
 	numpy \
