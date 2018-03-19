@@ -18,7 +18,7 @@ LABEL maintainer="daniel.amsel@ime.fraunhofer.de" \
 WORKDIR /opt/
 
 RUN apt update && \
-    apt install --yes
+    apt install --yes \
         python \
 	python-pip \
 	zlib1g-dev \
