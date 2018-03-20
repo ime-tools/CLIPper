@@ -20,6 +20,7 @@ WORKDIR /opt/
 RUN apt update && \
     apt install --yes \
         python \
+	git \
 	python-pip \
 	zlib1g-dev \
 	pkg-config \
@@ -34,6 +35,10 @@ RUN pip install cython \
 	numpy \
 	scipy
 
-RUN easy_install clipper
+RUN git clone git://github.com/YeoLab/clipper.git && \
+    cd clipper && \
+    python setup.py install && \
+    cd .. && \
+    clipper -h
 
 WORKDIR /data/
