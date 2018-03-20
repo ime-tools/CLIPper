@@ -33,7 +33,8 @@ RUN apt update && \
 
 RUN pip install cython \
 	numpy \
-	scipy
+	scipy \
+	pandas
 
 RUN git clone git://github.com/YeoLab/clipper.git && \
     cd clipper && \
