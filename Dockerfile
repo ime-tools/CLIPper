@@ -41,4 +41,5 @@ RUN git clone git://github.com/YeoLab/clipper.git && \
     cd .. && \
     clipper -h
 
+VOLUME /data
 WORKDIR /data/
